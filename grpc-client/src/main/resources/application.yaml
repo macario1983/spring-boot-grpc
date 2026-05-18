@@ -1,6 +1,11 @@
 spring:
     application:
         name: grpc.client
+    grpc:
+        client:
+            channels:
+                default:
+                    address: localhost:8080
 
 server:
     port: 8081
