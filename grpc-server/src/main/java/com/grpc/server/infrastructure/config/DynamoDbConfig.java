@@ -15,20 +15,12 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 @Configuration
 public class DynamoDbConfig {
 
-    @Value("${aws.region}")
-    private String region;
-
-    @Value("${aws.access-key}")
-    private String accessKey;
-
-    @Value("${aws.secret-key}")
-    private String secretKey;
-
-    @Value("${aws.dynamodb.endpoint}")
-    private String endpoint;
-
     @Bean
-    public DynamoDbClient dynamoDbClient() {
+    public DynamoDbClient dynamoDbClient(
+            @Value("${aws.region:us-east-1}") String region,
+            @Value("${aws.access-key:fake}") String accessKey,
+            @Value("${aws.secret-key:fake}") String secretKey,
+            @Value("${aws.dynamodb.endpoint:http://localhost:4566}") String endpoint) {
         return DynamoDbClient.builder()
                 .region(Region.of(region))
                 .endpointOverride(URI.create(endpoint))
