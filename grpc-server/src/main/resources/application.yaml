@@ -11,3 +11,10 @@ aws:
     secret-key: fake
     dynamodb:
         endpoint: http://localhost:4566
+
+logging:
+    level:
+        com.grpc.server: INFO
+        io.grpc: WARN
+    pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

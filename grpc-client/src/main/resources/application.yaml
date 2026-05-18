@@ -13,3 +13,10 @@ server:
     error:
         include-message: always
         include-stacktrace: always
+
+logging:
+    level:
+        com.grpc.client: INFO
+        io.grpc: WARN
+    pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
