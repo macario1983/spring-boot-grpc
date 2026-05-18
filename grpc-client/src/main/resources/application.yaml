@@ -5,7 +5,11 @@ spring:
         client:
             channels:
                 default:
-                    address: localhost:8080
+                    address: 127.0.0.1:8080
+                    negotiationType: PLAINTEXT
 
 server:
     port: 8081
+    error:
+        include-message: always
+        include-stacktrace: always
