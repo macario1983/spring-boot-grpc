@@ -1,0 +1,13 @@
+spring:
+    application:
+        name: grpc-server
+    grpc:
+        server:
+            port: 8080
+
+aws:
+    region: us-east-1
+    access-key: fake
+    secret-key: fake
+    dynamodb:
+        endpoint: http://localhost:4566
